@@ -6,3 +6,6 @@ a native gui for openframeworks -- it uses native gui code that's very simple / 
 produces a secondary window, like this: 
 
 http://i.imgur.com/86VjD.png
+
+the other platforms are not hooked up, but my alterations of the IVT code are minimal (exposing a few enums) so it should be a piece of cake to hook up. 
+
