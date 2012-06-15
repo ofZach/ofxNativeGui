@@ -20,17 +20,13 @@ class testApp : public ofBaseApp, public CMainWindowEventInterface {
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-        // stuff we pass in
+        // stuff we pass in when we are making the gui. 
         vector < string > comboVals;
     
+    	// the gui window. 
         ofxNativeGui GUI;
-    
-    
-//        // these are callbacks from the CCocoaMainWindow
-//        void ButtonPushed(WIDGET_HANDLE widget);
-//        void ValueChanged(WIDGET_HANDLE widget, int value);
-//		
-        // results for the callback
+        
+        // these variables are passed into the gui, and get altered as the gui is altered: 
         int comboVal;
         float sliderVal;
         string enteredText;
