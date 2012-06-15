@@ -9,3 +9,5 @@ http://i.imgur.com/86VjD.png
 
 the other platforms are not hooked up, but my alterations of the IVT code are minimal (exposing a few enums) so it should be a piece of cake to hook up. 
 
+I still need to add the propograting of events but for now, there's a system of attaching a variable to a gui element that works and the example shows this off.   
+
