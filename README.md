@@ -16,4 +16,4 @@ To do:
 * sliders need some numerial display of output
 * getters and setters for gui objects (set value, get value, etc)
 * hiding and showing of the main window is a bit funky.  Some code that lets you focus the gui would be good (it pops up behind, can get closed, etc)
-
+* combo box add selected item option
