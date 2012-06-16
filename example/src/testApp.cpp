@@ -9,7 +9,7 @@ void testApp::setup(){
     comboVals.push_back("three");
     
     sliderVal = 0;
-    comboVal = 0;"no combo selected yet";
+    comboVal = 0; //"no combo selected yet";
     enteredText = "no entered text yet";
     // --------------- setup the gui window
     
