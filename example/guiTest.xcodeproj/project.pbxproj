@@ -63,7 +63,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		11CFE834158BB6EC008A7ED0 /* ApplicationHandlerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationHandlerInterface.h; sourceTree = "<group>"; };
+		11AF64B2158C42C800742E4A /* ApplicationHandlerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationHandlerInterface.h; sourceTree = "<group>"; };
+		11AF64B3158C42C800742E4A /* MainWindowEventInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowEventInterface.h; sourceTree = "<group>"; };
+		11AF64B4158C42C800742E4A /* MainWindowInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowInterface.h; sourceTree = "<group>"; };
 		11CFE835158BB6EC008A7ED0 /* CocoaApplicationHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CocoaApplicationHandler.cpp; sourceTree = "<group>"; };
 		11CFE836158BB6EC008A7ED0 /* CocoaApplicationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaApplicationHandler.h; sourceTree = "<group>"; };
 		11CFE837158BB6EC008A7ED0 /* CocoaImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaImplementation.h; sourceTree = "<group>"; };
@@ -73,8 +75,6 @@
 		11CFE83B158BB6EC008A7ED0 /* GLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLContext.m; sourceTree = "<group>"; };
 		11CFE83C158BB6EC008A7ED0 /* GUIFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIFactory.h; sourceTree = "<group>"; };
 		11CFE83D158BB6EC008A7ED0 /* GUIFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUIFactory.m; sourceTree = "<group>"; };
-		11CFE83E158BB6EC008A7ED0 /* MainWindowEventInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowEventInterface.h; sourceTree = "<group>"; };
-		11CFE83F158BB6EC008A7ED0 /* MainWindowInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowInterface.h; sourceTree = "<group>"; };
 		11CFE840158BB6EC008A7ED0 /* ofxNativeGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxNativeGui.cpp; sourceTree = "<group>"; };
 		11CFE841158BB6EC008A7ED0 /* ofxNativeGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxNativeGui.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
@@ -138,6 +138,9 @@
 		11CFE832158BB6EC008A7ED0 /* IVT */ = {
 			isa = PBXGroup;
 			children = (
+				11AF64B2158C42C800742E4A /* ApplicationHandlerInterface.h */,
+				11AF64B3158C42C800742E4A /* MainWindowEventInterface.h */,
+				11AF64B4158C42C800742E4A /* MainWindowInterface.h */,
 				11CFE833158BB6EC008A7ED0 /* Cocoa */,
 			);
 			path = IVT;
@@ -146,7 +149,6 @@
 		11CFE833158BB6EC008A7ED0 /* Cocoa */ = {
 			isa = PBXGroup;
 			children = (
-				11CFE834158BB6EC008A7ED0 /* ApplicationHandlerInterface.h */,
 				11CFE835158BB6EC008A7ED0 /* CocoaApplicationHandler.cpp */,
 				11CFE836158BB6EC008A7ED0 /* CocoaApplicationHandler.h */,
 				11CFE837158BB6EC008A7ED0 /* CocoaImplementation.h */,
@@ -156,8 +158,6 @@
 				11CFE83B158BB6EC008A7ED0 /* GLContext.m */,
 				11CFE83C158BB6EC008A7ED0 /* GUIFactory.h */,
 				11CFE83D158BB6EC008A7ED0 /* GUIFactory.m */,
-				11CFE83E158BB6EC008A7ED0 /* MainWindowEventInterface.h */,
-				11CFE83F158BB6EC008A7ED0 /* MainWindowInterface.h */,
 			);
 			path = Cocoa;
 			sourceTree = "<group>";
