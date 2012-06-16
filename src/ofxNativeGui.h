@@ -5,10 +5,21 @@
 // this could be done with OF events. 
 
 
+#ifdef TARGET_OSX
 #include "CocoaMainWindow.h"
+#endif
+
+#ifdef TARGET_WIN32
+#include "Win32MainWindow.h"
+#endif
+
+#ifdef TARGET_LINUX
+#include "GTKMainWindow.h"
+#endif
+
+
+
 #include "MainWindowEventInterface.h"
-
-
 
 
 class nativeWidget {
@@ -43,7 +54,19 @@ public:
     
     void setup(ofRectangle bounds, string name){
         interface = NULL;
+        
+        
+#ifdef TARGET_OSX
         CMW = new CCocoaMainWindow(bounds.x, bounds.y, bounds.width, bounds.height, name.c_str());
+#endif
+        
+#ifdef TARGET_WIN32
+        CMW = new Win32MainWindow(bounds.x, bounds.y, bounds.width, bounds.height, name.c_str());
+#endif
+#ifdef TARGET_LINUX
+        CMW = new GTKMainWindow(bounds.x, bounds.y, bounds.width, bounds.height, name.c_str());
+#endif
+        
         CMW->SetEventCallback(this);
     }
     
@@ -68,6 +91,6 @@ public:
     
     vector < nativeWidget * > widgets;    
     
-    CCocoaMainWindow * CMW;
+    CMainWindowInterface * CMW;
     
 };
