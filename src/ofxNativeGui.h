@@ -48,6 +48,7 @@ public:
 };
 
 
+
 class ofxNativeGui : public CMainWindowEventInterface {
     
 public: 
