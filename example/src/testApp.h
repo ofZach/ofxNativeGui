@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include "ofxNativeGui.h"
 
-class testApp : public ofBaseApp, public CMainWindowEventInterface {
+class testApp : public ofBaseApp, public ofxNativeGuiEventInterface {
 
 	public:
 		void setup();
@@ -31,6 +31,7 @@ class testApp : public ofBaseApp, public CMainWindowEventInterface {
         float sliderVal;
         string enteredText;
     
+        void guiEvent(nativeWidget & widget);
     
     
 };

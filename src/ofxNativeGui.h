@@ -44,7 +44,7 @@ class nativeSliderWidget : public nativeWidget {
 
 class ofxNativeGuiEventInterface {
 public: 
-    virtual void guiEvent(nativeWidget & widget);
+    virtual void guiEvent(nativeWidget & widget) = 0;
 };
 
 

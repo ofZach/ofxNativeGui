@@ -43,6 +43,8 @@ void ofxNativeGui::addButton(string name, string buttonText, ofRectangle bounds,
         *variable = 0;                                  // for buttons, we'll just increase a count, up to user to 
                                                         // check for differences or just recv events. 
         guiElement->variablePtr = (void * )variable;
+    } else {
+        guiElement->variablePtr = new int();
     }
     widgets.push_back(guiElement);
 }
@@ -54,7 +56,7 @@ void ofxNativeGui::addTextEntry(string name, string defaultText, ofRectangle bou
     if (variable != NULL){
         guiElement->variablePtr = (void * )variable;
     } else {
-        
+        guiElement->variablePtr = new string();
         
     }
     widgets.push_back(guiElement);
@@ -88,8 +90,17 @@ void ofxNativeGui::ButtonPushed(WIDGET_HANDLE widget){
             if (widgets[i]->variablePtr != NULL){
                 (*((int *)widgets[i]->variablePtr))++;
             }
+        
+            if (interface != NULL){
+                interface->guiEvent(*(widgets[i]));
+            }
+        
         }
+        
+        
+        
     }
+    
     
     
     
@@ -100,6 +111,8 @@ void ofxNativeGui::ValueChanged(WIDGET_HANDLE widget, int value){
     
     for (int i = 0; i < widgets.size(); i++){
         if (widget == widgets[i]->widget){
+            
+        // update the widget. 
         switch (widgets[i]->type){
             case eCheckBox:
             {
@@ -140,8 +153,16 @@ void ofxNativeGui::ValueChanged(WIDGET_HANDLE widget, int value){
                 break;
                 
             default: break;
+        
+        }
+        
+        // after updating the widget, pass it on. 
+        if (interface != NULL){
+            interface->guiEvent(*(widgets[i]));
         }
         }
+        
+        
     }
 
 

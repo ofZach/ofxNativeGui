@@ -14,7 +14,9 @@ void testApp::setup(){
     // --------------- setup the gui window
     
     GUI.setup(ofRectangle(0,0,300,300), "my sample gui");
-        
+    
+    GUI.setEventInterface(this);
+    
     GUI.addComboBox("combo", ofRectangle(10, 50, 100, 30), comboVals, &comboVal);
     GUI.addSlider("slider", ofRectangle(10, 90, 180, 20), -2, 2, 0, &sliderVal);
     GUI.addTextEntry("textBox", "please enter text here", ofRectangle(10,120,180,100), &enteredText);
@@ -86,3 +88,9 @@ void testApp::gotMessage(ofMessage msg){
 void testApp::dragEvent(ofDragInfo dragInfo){ 
     
 }
+
+//--------------------------------------------------------------
+void testApp::guiEvent(nativeWidget & widget){
+    cout << "gui event " << widget.name << endl;
+}
+
