@@ -23,6 +23,10 @@ void ofxNativeGui::addSlider(string name, ofRectangle bounds, float minValue, fl
     guiElement->type = eSlider;
     guiElement->name = name;
     
+    
+    string namePlusVal = name + "  (" + ofToString(startValue) + ")";
+    ((nativeSliderWidget*)guiElement)->widgetLabel = CMW->AddLabel(bounds.x + bounds.width + 10, bounds.y, 200, 30, namePlusVal.c_str());
+    
     ((nativeSliderWidget*)guiElement)->minVal = minValue;
     ((nativeSliderWidget*)guiElement)->maxVal = maxValue;
 
@@ -141,6 +145,20 @@ void ofxNativeGui::ValueChanged(WIDGET_HANDLE widget, int value){
                     float val = ofMap(value, 0, 1000, minVal, maxVal);
                     // do some calc here
                     (*((float *)widgets[i]->variablePtr)) = val;
+                    
+                    
+                    
+                    string namePlusVal = ((nativeSliderWidget*)widgets[i])->name + "  (" + ofToString(val) + ")";
+                    //((nativeSliderWidget*)widgets[i])->widgetLabel
+                    
+                    //cout << namePlusVal << endl;
+                    
+                    CMW->SetText(((nativeSliderWidget*)widgets[i])->widgetLabel
+                                 , namePlusVal.c_str());
+                    
+                    //setValue(namePlusVal.c_str());
+                    
+                    
                 }
             }
             break;

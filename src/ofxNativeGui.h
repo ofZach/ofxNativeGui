@@ -32,6 +32,7 @@ public:
     string          name;
     void *          variablePtr;        // bool, int, string, etc based on the type.
     
+    
 };
 
 class nativeSliderWidget : public nativeWidget {
@@ -40,6 +41,8 @@ class nativeSliderWidget : public nativeWidget {
     float startVal;
     float minVal;
     float maxVal;
+    
+    WIDGET_HANDLE   widgetLabel;
 };
 
 class ofxNativeGuiEventInterface {
