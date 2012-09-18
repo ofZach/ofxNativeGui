@@ -12,3 +12,7 @@
 *.a
 
 .DS_STORE
+
+# linux specific
+obj/
+*~

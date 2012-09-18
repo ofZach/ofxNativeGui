@@ -1,12 +1,12 @@
 // ****************************************************************************
-// Filename:  CocoaApplicationHandler.h
+// Filename:  GTKApplicationHandler.h
 // Author:    Florian Hecht
-// Date:      2008
+// Date:      2009
 // ****************************************************************************
 
 
-#ifndef _COCOA_APPLICATION_HANDLER_H_
-#define _COCOA_APPLICATION_HANDLER_H_
+#ifndef _GTK_APPLICATION_HANDLER_H_
+#define _GTK_APPLICATION_HANDLER_H_
 
 
 // ****************************************************************************
@@ -18,24 +18,27 @@
 
 
 // ****************************************************************************
-// CCocoaApplicationHandler
+// CGTKApplicationHandler
 // ****************************************************************************
 
-class CCocoaApplicationHandler : public CApplicationHandlerInterface
+class CGTKApplicationHandler : public CApplicationHandlerInterface
 {
-	
 public:
-	CCocoaApplicationHandler();
-	~CCocoaApplicationHandler();
+	CGTKApplicationHandler(int argc = 0, char **argv = 0);
+	~CGTKApplicationHandler();
 
 	bool ProcessEventsAndGetExit();
 	void Reset();
 
+	void SetExit(bool exit) { m_bExit = exit; }
+
+	static CGTKApplicationHandler *GetApplicationHandler() { return m_pGTKApplicationHandler; }
 private:
 
-	bool m_bCocoaInitialized;
+	bool m_bExit;
+	static CGTKApplicationHandler *m_pGTKApplicationHandler;
 };
 
 
 
-#endif /* _COCOA_APPLICATION_HANDLER_H_ */
+#endif /* _GTK_APPLICATION_HANDLER_H_ */

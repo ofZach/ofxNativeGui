@@ -1,53 +1,40 @@
 // ****************************************************************************
-// Filename:  CocoaMainWindow.h
+// Filename:  GTKMainWindow.h
 // Author:    Florian Hecht
-// Date:      2008
+// Date:      2009
 // ****************************************************************************
 
 
-#ifndef _COCOA_MAIN_WINDOW_H_
-#define _COCOA_MAIN_WINDOW_H_
+#ifndef _GTK_MAIN_WINDOW_H_
+#define _GTK_MAIN_WINDOW_H_
 
 
 // ****************************************************************************
-// Includes
+// Necessary includes
 // ****************************************************************************
 
 #include "MainWindowInterface.h"
 #include <vector>
+#include <gtk/gtk.h>
 
 
 // ****************************************************************************
 // Forward declarations
 // ****************************************************************************
 
-struct CCocoaMainWindowWidget;
-
-
-// [zach] I need these enums exposed, they were in cpp before
-enum CocoaWidgetType
-{
-	eImage = 0,
-	eButton,
-	eLabel,
-	eCheckBox,
-	eTextEdit,
-	eSlider,
-	eComboBox,
-	eGLWidget
-};
+class CGTKMainWindowWidget;
 
 
 
 // ****************************************************************************
-// CCocoaMainWindow
+// CQtMainWindow
 // ****************************************************************************
 
-class CCocoaMainWindow : public CMainWindowInterface
+class CGTKMainWindow : public CMainWindowInterface
 {
 public:
-	CCocoaMainWindow(int x, int y, int width, int height, const char *title);
-	~CCocoaMainWindow();
+	CGTKMainWindow(int x, int y, int width, int height, const char *title);
+	virtual ~CGTKMainWindow();
 
 	// create widgets
 	WIDGET_HANDLE AddImage(int x, int y, int width, int height, WIDGET_HANDLE parent = 0);
@@ -67,7 +54,7 @@ public:
 
 	bool GetValue(WIDGET_HANDLE widget, int &value);
 	bool SetValue(WIDGET_HANDLE widget, int value);
-	
+
 	bool SwapBuffersGLWidget(WIDGET_HANDLE widget);
 	bool MakeCurrentGLWidget(WIDGET_HANDLE widget);
 
@@ -78,20 +65,26 @@ public:
 	int GetModifierKeyState();
 
 	void SetEventCallback(CMainWindowEventInterface *callback) {m_event_callback = callback;}
-	
-    
-	void EventCallback(void* widget, int type, int *params);
+
+
+	CMainWindowEventInterface *GetEventCallback() { return m_event_callback; }
+
+public:
+	void Destroy(GtkWidget *widget);
+
 private:
-	void FixPosition(int &x, int &y, int &width, int &height);
-	
-	void *m_cocoa_main_window;
-	int m_width;
-	int m_height;
 	CMainWindowEventInterface *m_event_callback;
 
-	std::vector<CCocoaMainWindowWidget*> m_widgets;
+	std::vector<CGTKMainWindowWidget*> m_widgets;
+
+	GtkWidget *m_main_window;
+	GtkWidget *m_fixed_container;
+
+	static int m_ref_count;
+
+	bool m_bDestroyed;
 };
 
 
 
-#endif /* _COCOA_MAIN_WINDOW_H_ */
+#endif /* _GTK_MAIN_WINDOW_H_ */
