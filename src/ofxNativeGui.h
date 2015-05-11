@@ -22,6 +22,17 @@
 
 #include "MainWindowEventInterface.h"
 
+enum WidgetType
+{
+	eImage = 0,
+	eButton,
+	eLabel,
+	eCheckBox,
+	eTextEdit,
+	eSlider,
+	eComboBox,
+	eGLWidget
+};
 
 class nativeWidget {
 
@@ -66,7 +77,7 @@ public:
 #endif
 
 #ifdef TARGET_WIN32
-        CMW = new Win32MainWindow(bounds.x, bounds.y, bounds.width, bounds.height, name.c_str());
+        CMW = new CWin32MainWindow(bounds.x, bounds.y, bounds.width, bounds.height, name.c_str());
 #endif
 #ifdef TARGET_LINUX
 		gtk_init_check(NULL, 0);

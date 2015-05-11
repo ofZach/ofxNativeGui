@@ -4,6 +4,7 @@
 // Date:      2009
 // ****************************************************************************
 
+#ifdef TARGET_LINUX
 
 #ifndef _GTK_MAIN_WINDOW_H_
 #define _GTK_MAIN_WINDOW_H_
@@ -13,7 +14,7 @@
 // Necessary includes
 // ****************************************************************************
 
-#include "MainWindowInterface.h"
+#include "Interfaces/MainWindowInterface.h"
 #include <vector>
 #include <gtk/gtk.h>
 
@@ -54,19 +55,19 @@ public:
 
 	bool GetValue(WIDGET_HANDLE widget, int &value);
 	bool SetValue(WIDGET_HANDLE widget, int value);
-
+	
 	bool SwapBuffersGLWidget(WIDGET_HANDLE widget);
 	bool MakeCurrentGLWidget(WIDGET_HANDLE widget);
 
 	// window control
 	void Show(WIDGET_HANDLE widget = 0);
 	void Hide(WIDGET_HANDLE widget = 0);
-
+	
 	int GetModifierKeyState();
 
 	void SetEventCallback(CMainWindowEventInterface *callback) {m_event_callback = callback;}
-
-
+	
+	
 	CMainWindowEventInterface *GetEventCallback() { return m_event_callback; }
 
 public:
@@ -76,15 +77,19 @@ private:
 	CMainWindowEventInterface *m_event_callback;
 
 	std::vector<CGTKMainWindowWidget*> m_widgets;
-
+	
 	GtkWidget *m_main_window;
 	GtkWidget *m_fixed_container;
-
+	
 	static int m_ref_count;
-
+	
 	bool m_bDestroyed;
 };
 
 
 
 #endif /* _GTK_MAIN_WINDOW_H_ */
+
+
+
+#endif

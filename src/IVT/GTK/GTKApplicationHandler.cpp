@@ -4,6 +4,7 @@
 // Date:      2009
 // ****************************************************************************
 
+#ifdef TARGET_LINUX
 
 #include "GTKApplicationHandler.h"
 
@@ -58,3 +59,5 @@ void CGTKApplicationHandler::Reset()
 {
 	
 }
+
+#endif

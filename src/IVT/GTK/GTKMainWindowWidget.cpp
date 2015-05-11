@@ -4,12 +4,13 @@
 // Date:      2009
 // ****************************************************************************
 
+#ifdef TARGET_LINUX
 
 #include "GTKMainWindowWidget.h"
 #include "GTKMainWindow.h"
 
-#include "MainWindowEventInterface.h"
-//#include "Image/ByteImage.h"
+#include "Interfaces/MainWindowEventInterface.h"
+#include "Image/ByteImage.h"
 
 
 CGTKMainWindowWidget::CGTKMainWindowWidget(CGTKMainWindow *main_window, GTKWidgetType type)
@@ -29,7 +30,7 @@ CGTKMainWindowWidget::~CGTKMainWindowWidget()
 void CGTKMainWindowWidget::Clicked()
 {
 	CMainWindowEventInterface *ec = m_main_window->GetEventCallback();
-
+	
 	if (ec != NULL && m_type == eButton)
 	{
 		ec->ButtonPushed(this);
@@ -38,7 +39,7 @@ void CGTKMainWindowWidget::Clicked()
 void CGTKMainWindowWidget::ValueChanged(int value)
 {
 	CMainWindowEventInterface *ec = m_main_window->GetEventCallback();
-
+	
 	if (ec != NULL && (m_type == eSlider || m_type == eComboBox))
 	{
 		ec->ValueChanged(this, value);
@@ -47,7 +48,7 @@ void CGTKMainWindowWidget::ValueChanged(int value)
 void CGTKMainWindowWidget::Toggled(bool flag)
 {
 	CMainWindowEventInterface *ec = m_main_window->GetEventCallback();
-
+	
 	if (ec != NULL && m_type == eCheckBox)
 	{
 		ec->ValueChanged(this, (flag ? 1 : 0));
@@ -56,7 +57,7 @@ void CGTKMainWindowWidget::Toggled(bool flag)
 void CGTKMainWindowWidget::TextChanged(const char *str)
 {
 	CMainWindowEventInterface *ec = m_main_window->GetEventCallback();
-
+	
 	if (ec != NULL && m_type == eTextEdit)
 	{
 		ec->ValueChanged(this, -1);
@@ -105,9 +106,9 @@ static void ivtimage_init (IVTImage *ttt)
 	ttt->pixmap = NULL;
 	ttt->image = NULL;
 	ttt->main_window_widget = NULL;
-
+	
 	ttt->mouse_down = 0;
-
+	
 	GTK_WIDGET_SET_FLAGS(ttt, GTK_CAN_FOCUS);
 }
 
@@ -169,7 +170,7 @@ static void ivtglwidget_init (IVTGLWidget *ttt)
 {
 	ttt->glcontext = NULL;
 	ttt->main_window_widget = NULL;
-
+	
 	GTK_WIDGET_SET_FLAGS(ttt, GTK_CAN_FOCUS);
 }
 
@@ -192,8 +193,12 @@ static void ivtglwidget_destroy(GtkObject *object)
 GtkWidget* ivtglwidget_new ()
 {
 	IVTGLWidget *glw = (IVTGLWidget*)g_object_new (ivtglwidget_get_type (), NULL);
-
+	
 	return (GtkWidget*)glw;
 }
 
 #endif /* USE_OPENGL */
+
+
+
+#endif

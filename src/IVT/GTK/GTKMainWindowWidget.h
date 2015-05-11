@@ -4,6 +4,7 @@
 // Date:      2009
 // ****************************************************************************
 
+#ifdef TARGET_LINUX
 
 #ifndef _GTK_MAIN_WINDOW_WIDGET_H_
 #define _GTK_MAIN_WINDOW_WIDGET_H_
@@ -153,3 +154,6 @@ GtkWidget*     ivtglwidget_new             (void);
 G_END_DECLS
 
 #endif /* _GTK_MAIN_WINDOW_WIDGET_H_ */
+
+
+#endif
