@@ -107,7 +107,7 @@ public:
 	virtual bool GetText(WIDGET_HANDLE widget, char *text, int len) = 0;
 	virtual bool SetText(WIDGET_HANDLE widget, const char *text) = 0;
 
-	virtual bool SetImage(WIDGET_HANDLE widget, const CByteImage *pImage) = 0;
+	//virtual bool SetImage(WIDGET_HANDLE widget, const CByteImage *pImage) = 0;
 
 	virtual bool GetValue(WIDGET_HANDLE widget, int &value) = 0;
 	virtual bool SetValue(WIDGET_HANDLE widget, int value) = 0;

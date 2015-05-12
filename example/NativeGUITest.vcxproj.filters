@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxNativeGui\src\IVT\Win32\Win32ApplicationHandler.cpp">
+      <Filter>addons\ofxNativeGui\src\IVT\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxNativeGui\src\IVT\Win32\Win32MainWindow.cpp">
+      <Filter>addons\ofxNativeGui\src\IVT\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxNativeGui\src\ofxNativeGui.cpp">
+      <Filter>addons\ofxNativeGui\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons">
+      <UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxNativeGui">
+      <UniqueIdentifier>{D5EE1D4A-557F-D986-9C01-70D8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxNativeGui\src">
+      <UniqueIdentifier>{222EB8B2-C421-29DB-8EBC-C088}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxNativeGui\src\IVT">
+      <UniqueIdentifier>{BB4B24F4-B290-32A4-751D-4F04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxNativeGui\src\IVT\Win32">
+      <UniqueIdentifier>{F71088D5-AC11-80E5-1229-C8F0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxNativeGui\src\IVT\ApplicationHandlerInterface.h">
+      <Filter>addons\ofxNativeGui\src\IVT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxNativeGui\src\IVT\MainWindowEventInterface.h">
+      <Filter>addons\ofxNativeGui\src\IVT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxNativeGui\src\IVT\MainWindowInterface.h">
+      <Filter>addons\ofxNativeGui\src\IVT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxNativeGui\src\IVT\Win32\Win32ApplicationHandler.h">
+      <Filter>addons\ofxNativeGui\src\IVT\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxNativeGui\src\IVT\Win32\Win32MainWindow.h">
+      <Filter>addons\ofxNativeGui\src\IVT\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxNativeGui\src\ofxNativeGui.h">
+      <Filter>addons\ofxNativeGui\src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
+</Project>

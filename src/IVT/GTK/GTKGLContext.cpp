@@ -4,6 +4,7 @@
 // Date:      2009
 // ****************************************************************************
 
+#ifdef TARGET_LINUX
 
 #include "GTKGLContext.h"
 
@@ -95,3 +96,6 @@ void CGTKGLContext::DoneCurrent()
 	glXMakeCurrent(xdisplay, None, NULL);
 }
 
+
+
+#endif

@@ -4,6 +4,7 @@
 // Date:      2009
 // ****************************************************************************
 
+#ifdef TARGET_LINUX
 
 #ifndef _GTK_APPLICATION_HANDLER_H_
 #define _GTK_APPLICATION_HANDLER_H_
@@ -13,7 +14,7 @@
 // Necessary includes
 // ****************************************************************************
 
-#include "ApplicationHandlerInterface.h"
+#include "Interfaces/ApplicationHandlerInterface.h"
 
 
 
@@ -29,8 +30,8 @@ public:
 
 	bool ProcessEventsAndGetExit();
 	void Reset();
-
-	void SetExit(bool exit) { m_bExit = exit; }
+	
+	void SetExit(bool exit) { m_bExit = exit; } 
 
 	static CGTKApplicationHandler *GetApplicationHandler() { return m_pGTKApplicationHandler; }
 private:
@@ -42,3 +43,6 @@ private:
 
 
 #endif /* _GTK_APPLICATION_HANDLER_H_ */
+
+
+#endif

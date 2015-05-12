@@ -4,6 +4,7 @@
 // Date:      2009
 // ****************************************************************************
 
+#ifdef TARGET_LINUX
 
 #ifndef _GTK_GL_CONTEXT_H_
 #define _GTK_GL_CONTEXT_H_
@@ -61,3 +62,6 @@ private:
 
 
 #endif /* _GTK_GL_CONTEXT_H_ */
+
+
+#endif
