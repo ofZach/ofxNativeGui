@@ -683,10 +683,10 @@ void* CocoaCreateMainWindow(int x, int y, int width, int height, const char *tit
 	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 	[nc addObserver: myWin selector: @selector(windowWillClose:) name: NSWindowWillCloseNotification object: win];
 	
-	id delegate = [NSApp delegate];
-	int nOpenWindows = [delegate numberOfOpenWindows];
-	nOpenWindows++;
-	[delegate setNumberOfOpenWindows: nOpenWindows];
+//	id delegate = [NSApp delegate];
+//    int nOpenWindows = [delegate numberOfOpenWindows];
+//	nOpenWindows++;
+//	[delegate setNumberOfOpenWindows: nOpenWindows];
 	
   [pool release];
 	return myWin;
@@ -864,7 +864,11 @@ void* CocoaCreateTextEdit(void* window, int x, int y, int width, int height, con
 		
 		NSString* str = [[NSString alloc] initWithCString: text encoding: NSASCIIStringEncoding];
 		[textEdit setStringValue: str];
-		
+
+        //we need to notify when text changes otherwise it only works when hitting enter
+//        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+//        [nc addObserver: myWin selector: @selector(eventNotify:) name: NSTextDidChangeNotification object: textEdit.currentEditor];
+        
 		[textEdit setTarget: myWin];
 		[textEdit setAction: @selector(eventNotify:)];
 		[view addSubview: textEdit];

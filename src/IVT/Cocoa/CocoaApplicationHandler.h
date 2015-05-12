@@ -4,7 +4,6 @@
 // Date:      2008
 // ****************************************************************************
 
-#ifdef TARGET_OSX
 
 #ifndef _COCOA_APPLICATION_HANDLER_H_
 #define _COCOA_APPLICATION_HANDLER_H_
@@ -14,7 +13,7 @@
 // Necessary includes
 // ****************************************************************************
 
-#include "Interfaces/ApplicationHandlerInterface.h"
+#include "ApplicationHandlerInterface.h"
 
 
 
@@ -41,5 +40,3 @@ private:
 
 #endif /* _COCOA_APPLICATION_HANDLER_H_ */
 
-
-#endif

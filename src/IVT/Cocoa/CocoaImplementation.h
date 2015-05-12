@@ -4,8 +4,6 @@
 // Date:      2008
 // ****************************************************************************
 
-#ifdef TARGET_OSX
-
 #ifndef _COCOA_IMPLEMENTATION_H_
 #define _COCOA_IMPLEMENTATION_H_
 
@@ -85,6 +83,3 @@
 @end
 
 #endif /* _COCOA_IMPLEMENTATION_H_ */
-
-
-#endif

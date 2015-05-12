@@ -4,8 +4,6 @@
 // Date:      2008
 // ****************************************************************************
 
-#ifdef TARGET_OSX
-
 #ifndef _COCOA_MAIN_WINDOW_H_
 #define _COCOA_MAIN_WINDOW_H_
 
@@ -14,8 +12,11 @@
 // Includes
 // ****************************************************************************
 
-#include "Interfaces/MainWindowInterface.h"
+//#include "ofMain.h"
+
+#include "MainWindowInterface.h"
 #include <vector>
+
 
 
 // ****************************************************************************
@@ -81,6 +82,3 @@ private:
 
 
 #endif /* _COCOA_MAIN_WINDOW_H_ */
-
-
-#endif

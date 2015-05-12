@@ -7,17 +7,16 @@
 // Date:      2008
 // *****************************************************************
 
-#ifdef TARGET_OSX
 
 // *****************************************************************
 // necessary includes
 // *****************************************************************
 
 #include "CocoaMainWindow.h"
-#include "Interfaces/MainWindowEventInterface.h"
+#include "MainWindowEventInterface.h"
 
-#include "Image/ByteImage.h"
-#include "Image/ImageProcessor.h"
+//#include "Image/ByteImage.h"
+//#include "Image/ImageProcessor.h"
 
 #ifdef USE_OPENGL
 
@@ -452,36 +451,36 @@ bool CCocoaMainWindow::SetText(WIDGET_HANDLE widget, const char *text)
 	return false;
 }
 
-bool CCocoaMainWindow::SetImage(WIDGET_HANDLE widget, const CByteImage *pImage)
-{
-	CCocoaMainWindowWidget *w = (CCocoaMainWindowWidget*)widget;
-	
-	if (w->type == eImage)
-	{
-		if (w->width != pImage->width || w->height != pImage->height)
-		{
-			printf("error: CCocoaMainWindow::SetImage: image dimensions do not match dimensions of image widget!\n");
-			return false;
-		}
-		
-		if (pImage->type == CByteImage::eRGB24)
-		{
-			CocoaSetImage(w->cocoa_ptr, pImage->width, pImage->height, pImage->pixels);
-		}
-		else
-		{
-			CByteImage temp(pImage->width, pImage->height, CByteImage::eRGB24);
-			
-			ImageProcessor::ConvertImage(pImage, &temp);
-			
-			CocoaSetImage(w->cocoa_ptr, pImage->width, pImage->height, temp.pixels);
-		}
-		
-		return true;
-	}
-	
-	return false;
-}
+//bool CCocoaMainWindow::SetImage(WIDGET_HANDLE widget, const CByteImage *pImage)
+//{
+//	CCocoaMainWindowWidget *w = (CCocoaMainWindowWidget*)widget;
+//	
+//	if (w->type == eImage)
+//	{
+//		if (w->width != pImage->width || w->height != pImage->height)
+//		{
+//			printf("error: CCocoaMainWindow::SetImage: image dimensions do not match dimensions of image widget!\n");
+//			return false;
+//		}
+//		
+//		if (pImage->type == CByteImage::eRGB24)
+//		{
+//			CocoaSetImage(w->cocoa_ptr, pImage->width, pImage->height, pImage->pixels);
+//		}
+//		else
+//		{
+//			CByteImage temp(pImage->width, pImage->height, CByteImage::eRGB24);
+//			
+//			ImageProcessor::ConvertImage(pImage, &temp);
+//			
+//			CocoaSetImage(w->cocoa_ptr, pImage->width, pImage->height, temp.pixels);
+//		}
+//		
+//		return true;
+//	}
+//	
+//	return false;
+//}
 
 bool CCocoaMainWindow::GetValue(WIDGET_HANDLE widget, int &value)
 {
@@ -596,6 +595,3 @@ void CCocoaMainWindow::FixPosition(int &x, int &y, int &width, int &height)
 {
 	y = m_height - y - height;
 }
-
-
-#endif

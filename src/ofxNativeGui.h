@@ -1,9 +1,6 @@
-
-#include "ofMain.h"
-
-
 // this could be done with OF events.
-
+#pragma once
+#include "ofMain.h"
 
 #ifdef TARGET_OSX
 #include "CocoaMainWindow.h"
@@ -21,6 +18,7 @@
 
 
 #include "MainWindowEventInterface.h"
+
 
 enum WidgetType
 {
